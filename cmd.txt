@@ -1,0 +1,23 @@
+git clone <link>
+git branch <branch-name> #Creating a new branch
+git push -u <remote> <branch-name> #push to remote repository
+git branch or git branch --list #Viewing branches
+git branch -d <branch-name> #deleting branch local
+git push origin --delete <branch-name> #Deleting a branch
+git checkout <branch-name> #selecting branch
+git checkout -b <branch-name> #selecting branch or create
+git push -u origin <branch_name> #push commiting
+
+git pull <remote>
+#The git pull command is used to get updates from the remote repo.
+This command is a combination of git fetch and git merge which means that, when we use git pull, it gets the updates from remote repository (git fetch) and immediately applies the latest changes in your local (git merge).
+
+git revert 3321844 #revert history
+
+Mergin
+First you should switch to the dev branch:
+git checkout dev
+Before merging, you should update your local dev branch:
+git fetch
+Finally, you can merge your feature branch into dev:
+git merge <branch-name>
