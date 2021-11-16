@@ -17,6 +17,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::group(['middleware' => 'auth:sanctum'],function () {
+    Route::group(['middleware' => 'verified'],function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
+
+        Route::get('/product', function () {
+            // Uses first & second middleware...
+        })->name('product');
+        Route::get('/promo', function () {
+            // Uses first & second middleware...
+        })->name('promo');
+        Route::get('/dealer', function () {
+            // Uses first & second middleware...
+        })->name('dealer');
+        Route::get('/after-sales', function () {
+            // Uses first & second middleware...
+        });
+        Route::get('/Corporate', function () {
+            // Uses first & second middleware...
+        })->name('after-sales');
+    });
+});
